@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<div
+		style="text-align: Left; width: 100%; font-size: 36px; line-height: 48px; background-color: navy; color: white;">Investor
+		Application</div>
+	<br />
+	<br />
+	<h:outputStylesheet name="css/styless.css" />
+</h:head>
+<h:body>
+	<div
+		style="width: 100%; font-size: 20px; line-height: 24px; background-color: navy; color: white;">IRR
+		Calculation Results</div>
+	<br />
+
+
+
+	<h:dataTable value="#{iRROutputBean.irrOutputData}" var="dataitem"
+		styleClass="employeeTable" headerClass="employeeTableHeader"
+		rowClasses="employeeTableOddRow,employeeTableEvenRow" border="2">
+		<h:column>
+			<f:facet name="header"> Investor </f:facet>#{dataitem.investor}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Investment Vehicle </f:facet>#{dataitem.investmentVehicle}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Cash-Flow </f:facet>#{dataitem.cashFlow}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Total Contributions </f:facet>#{dataitem.totalContributions}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Total Distributions </f:facet>#{dataitem.totalDistributions}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> IRR(%) </f:facet>#{dataitem.calculatedXIRR}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Net Multiple </f:facet>#{dataitem.calculatedNetMultiple}
+   			</h:column>
+
+		<h:column>
+			<f:facet name="header"> Invested Since </f:facet>#{dataitem.investedSince}
+   			</h:column>
+   			
+   			<h:column>
+			<f:facet name="header"> Asset Class </f:facet>#{dataitem.assetClass}
+   			</h:column>
+   			
+   			<h:column>
+			<f:facet name="header"> Status </f:facet>#{dataitem.status}
+   			</h:column>
+
+	</h:dataTable>
+	<br />
+	<h:form>
+		<h:commandButton action="investmentDataForm" value="Back"></h:commandButton>
+	</h:form>
+	
+</h:body>
+</html>
